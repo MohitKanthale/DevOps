@@ -1,0 +1,324 @@
+/* General Styles */
+body {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #3d3a3a, #222); /* Deep dark gradient */
+  color: #eae1d8; /* Soft vintage white */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Top alignment */
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  width: 280px; /* Optimized width for better layout */
+  background: #2e2a2a; /* Rich dark brown */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.4); /* Slightly heavier shadow */
+  height: auto; /* Full height for better structure */
+  overflow-y: auto;
+  border-right: 1px solid #493f3f; /* Subtle darker border */
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar:hover {
+  width: 250px; /* Slight expansion for hover effect */
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffcc00;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.8);
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.8);
+  }
+  100% {
+    text-shadow: 1px 2px 10px rgba(255, 204, 0, 1);
+  }
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* Enhanced Sidebar Items */
+.sidebar-item {
+  font-size: 16px;
+  padding: 12px 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  color: #ffffff; /* White text for vibrance */
+  text-transform: capitalize;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ffaf40, #ff5f5f); /* Vibrant gradient */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: all 0.3s ease-in-out;
+  position: relative; /* For decorative elements */
+  overflow: hidden;
+}
+
+.sidebar-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Glimmer effect */
+  transform: skewX(-25deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar-item:hover::before {
+  left: 100%;
+}
+
+.sidebar-item:hover {
+  transform: scale(1.1); /* Slight hover zoom */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+.sidebar-item.active {
+  background: linear-gradient(135deg, #ff5f5f, #ffaf40); /* Reverse gradient for active state */
+  box-shadow: 0 6px 15px rgba(255, 95, 95, 0.5); /* Highlighted shadow */
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 70px;
+  margin: 0 10px; /* Added spacing around main content */
+  background: #4f4842; /* Deep brownish-gray */
+  border-radius: 0px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between sections */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Top Navigation */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #493f3f, #6e635e); /* Gradient top nav */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  gap: 20px; /* Spacing between filter and search bar */
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 15px;
+}
+
+.filter-btn {
+  background: #6e635e; /* Faded vintage grayish-brown */
+  border: none;
+  padding: 10px 20px; /* Slightly larger buttons for better clickability */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #eee4dc; /* Vintage cream white */
+  font-weight: bold;
+}
+
+.filter-btn.active {
+  background: #d4af37; /* Muted gold */
+  color: #2e2a2a; /* Deep vintage brown */
+}
+
+.filter-btn:hover {
+  background: #8a795d; /* Warmer vintage brown */
+  color: white;
+  box-shadow: 0px 3px 12px rgba(134, 94, 0, 0.5);
+  transform: scale(1.05);
+}
+
+/* Decorative Separator */
+.separator {
+  height: 3px;
+  width: 80%;
+  background: linear-gradient(90deg, #ff5f5f, #ffaf40); /* Vibrant gradient */
+  margin: 20px auto;
+  border-radius: 50px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Bar */
+.search-bar {
+  padding: 12px;
+  width: 300px; /* Slightly wider for better usability */
+  border: 1px solid #82796e; /* Soft warm brown */
+  border-radius: 30px;
+  font-size: 16px;
+  background: #3f3936; /* Deep muted brown */
+  color: #d8d0c2; /* Cream white text */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+  outline: none;
+  /*box-shadow: 0px 4px 15px rgba(255, 175, 64, 0.4); /* Glowing effect on focus */
+}
+
+/* Trending Section */
+.trending-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.trending-card {
+  display: flex;
+  flex-direction: column;
+  background: #6e635e; /* Faded brown tone */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  margin: auto;
+}
+
+.trending-card:hover {
+  transform: scale(1.08);
+  background: linear-gradient(120deg, rgba(255, 175, 64, 0.1), rgba(255, 95, 95, 0.1));
+}
+
+.trending-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  border-bottom: 3px solid #d4af37; /* Muted gold accent */
+}
+
+.trending-info {
+  padding: 15px;
+  text-align: left;
+  background: #4f4842; /* Darker vintage tone */
+  transition: background 0.3s ease-in-out;
+}
+
+.trending-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #d4af37; /* Muted gold */
+}
+
+/* Most Watched Section */
+.most-watched-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.most-watched-card {
+  background: #6e635e; /* Vintage muted brown */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s, transform 0.3s, background 0.3s;
+  overflow: hidden;
+  text-align: center;
+}
+
+.most-watched-card:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, rgba(255, 175, 64, 0.1), rgba(255, 95, 95, 0.1));
+}
+
+.most-watched-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 6px;
+}
+
+.most-watched-card:hover img {
+  transform: scale(1.1);
+}
+
+.watch-now {
+  background: linear-gradient(90deg, #ffaf40, #ff5f5f); /* Vibrant Gradient */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0px 3px 15px rgba(255, 95, 95, 0.4);
+}
+
+.watch-now:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 25px rgba(255, 95, 95, 0.6); /* Enhanced Glow */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .trending-card {
+    max-width: 100%;
+  }
+}
