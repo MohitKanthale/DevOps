@@ -1,65 +1,54 @@
-import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
-
-const projects = [
-  { title: "Project 1", description: "Description of project 1" },
-  { title: "Project 2", description: "Description of project 2" },
-];
-
-const Projects = () => {
-  const theme = useTheme();
-  const darkMode = theme ? theme.darkMode : false;
-
-  return (
-    <section
-      id="projects"
-      className={`py-20 text-center transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}
-    >
-      <h2 className="text-4xl font-bold mb-8">My Projects</h2>
-      <div className="grid md:grid-cols-2 gap-6 px-6">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className={`p-6 rounded-lg shadow-lg transition-all duration-300 ${darkMode ? "bg-gray-800" : "bg-white"}`}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-          >
-            <h3 className="text-2xl font-semibold">{project.title}</h3>
-            <p className="mt-2">{project.description}</p>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
-};
+import { useState, useEffect } from "react";
 
 const Footer = () => {
-  const theme = useTheme();
-  const darkMode = theme ? theme.darkMode : false;
+  const { darkMode } = useTheme();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
 
   return (
-    <footer className={`text-center py-6 transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}>
+    <footer
+      className={`text-center py-6 transition-all duration-300 border-t-2 ${darkMode ? "bg-gray-900 text-white border-gray-700" : "bg-gray-100 text-black border-gray-300"}`}
+    >
       <p>&copy; {new Date().getFullYear()} Mohit Kanthale. All rights reserved.</p>
       <div className="flex justify-center gap-4 mt-4">
         <a
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-blue-400"
+          className="text-xl hover:text-blue-400 transition-all duration-300"
         >
-          GitHub
+          <FaGithub />
         </a>
         <a
           href="https://linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-blue-400"
+          className="text-xl hover:text-blue-400 transition-all duration-300"
         >
-          LinkedIn
+          <FaLinkedin />
         </a>
       </div>
+      {isVisible && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300"
+        >
+          <FaArrowUp />
+        </button>
+      )}
     </footer>
   );
 };
