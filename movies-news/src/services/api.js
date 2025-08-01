@@ -7,7 +7,7 @@ export const fetchNews = async () => {
     const response = await axios.get(API_URL);
     return response.data.articles;
   } catch (error) {
-    console.error("Error fetching news:", error);
+    console.error("Error fetching the news:", error);
     return [];
   }
 };
