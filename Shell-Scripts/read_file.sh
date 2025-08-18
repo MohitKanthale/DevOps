@@ -6,4 +6,4 @@
 
 while read line; do
     echo "Line: $line"
-done < file.txt
+done < nodeHealth.sh
