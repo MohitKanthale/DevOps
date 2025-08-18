@@ -2,7 +2,7 @@
 
 #Reading a file:
 
-#In place of file.txt, replace it with your file name.
+#In place of file.txt replace it with your file name.
 
 while read line; do
     echo "Line: $line"
