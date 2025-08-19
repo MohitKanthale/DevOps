@@ -15,16 +15,16 @@ fi
 
 #For Loop
 
-for fruit in apple banana mango; do
-    echo "I like Mango"
-done
+# for fruit in apple banana mango; do
+#     echo "I like Mango"
+# done
 
 
 #While loop
 
-count=0
+# count=0
 
-while [ $count -lt 5 ]; do
-    echo "Count: $count"
-    ((count++))
-done
+# while [ $count -lt 5 ]; do
+#     echo "Count: $count"
+#     ((count++))
+# done
