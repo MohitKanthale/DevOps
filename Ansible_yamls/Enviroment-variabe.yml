@@ -1,0 +1,29 @@
+---
+
+- hosts: all
+  remote_user: root
+
+  # define a dictionary of environment variables
+  vars:
+    env:
+      HI: test2
+      http_proxy: http://proxy.example.com:8080
+
+  tasks:
+
+    - name: Show HI using direct inline environment
+      shell: echo $HI
+      environment:
+        HI: test1
+      register: direct_env
+
+    - debug:
+        msg: "Output with direct environment: {{ direct_env.stdout }}"
+
+    - name: Show HI using env dictionary
+      shell: echo $HI
+      environment: "{{ env }}"
+      register: dict_env
+
+    - debug:
+        msg: "Output with env dictionary: {{ dict_env.stdout }}"
