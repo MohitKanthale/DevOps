@@ -3,7 +3,7 @@
 - name: Download simple web site 
   hosts: all 
 
-  gather_facts: false 
+  gather_facts: false    # It will Skip collecting system info (not needed here)
   tasks:
     - name: Download simple web site to 'C:\inetpub\wwwroot\ansible.html'
       win_get_url:  # Windows module to download files from a URL
