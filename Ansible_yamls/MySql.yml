@@ -1,0 +1,42 @@
+# Example Ansible playbook that uses the MySQL module.
+
+
+---
+- name: MySQL Setup with Ansible using env vars
+  hosts: all
+  remote_user: root
+  become: true
+
+  vars:
+    mysql_user: "{{ lookup('env','MYSQL_USER') }}"
+    mysql_password: "{{ lookup('env','MYSQL_PASSWORD') }}"
+
+  tasks:
+
+    - name: Ensure PyMySQL is installed
+      ansible.builtin.package:
+        name: python3-pymysql
+        state: present
+
+    - name: Create database user 'bob'
+      community.mysql.mysql_user:
+        name: bob
+        password: "12345"
+        priv: "*.*:ALL"
+        state: present
+        login_user: "{{ mysql_user }}"
+        login_password: "{{ mysql_password }}"
+
+    - name: Create database 'bobdata'
+      community.mysql.mysql_db:
+        name: bobdata
+        state: present
+        login_user: "{{ mysql_user }}"
+        login_password: "{{ mysql_password }}"
+
+    - name: Ensure no user named 'sally' exists
+      community.mysql.mysql_user:
+        name: sally
+        state: absent
+        login_user: "{{ mysql_user }}"
+        login_password: "{{ mysql_password }}"
