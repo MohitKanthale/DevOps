@@ -1,5 +1,10 @@
 # Example Ansible playbook that uses the MySQL module.
 
+# Here I stored my username and password in enviroment variable
+
+# We can set using export mysql_user = "username" and mysql_password = "password"
+
+#use this enviroment variables in the yaml.
 
 ---
 - name: MySQL Setup with Ansible using env vars
