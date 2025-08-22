@@ -3,13 +3,19 @@
 - hosts: all
   remote_user: root
 
-  # define a dictionary of environment variables
+# define a dictionary of environment variables
+
   vars:
     env:
       HI: test2
       http_proxy: http://proxy.example.com:8080
 
   tasks:
+
+# Here, we used task-specific env var (limited only for this task)
+
+# In Ansible, register is used to capture the output of a task into a variable 
+# so that we can reuse it later in the playbook.
 
     - name: Show HI using direct inline environment
       shell: echo $HI
@@ -19,6 +25,9 @@
 
     - debug:
         msg: "Output with direct environment: {{ direct_env.stdout }}"
+
+
+# Here, we use the predefined env dictionary (HI: test2) which we can reuse for multiple tasks
 
     - name: Show HI using env dictionary
       shell: echo $HI
