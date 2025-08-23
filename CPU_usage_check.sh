@@ -2,7 +2,7 @@
 
 #here in place of bandaru, use your local system user-name
 
-#set -exo
+#set -exo for debugging
 
 #use mail cmd in linux terminal to check the mails
 
