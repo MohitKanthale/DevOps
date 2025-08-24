@@ -6,4 +6,4 @@
 
   tasks:
   - name: ping
-    win_ping:
+    win_ping:       # It will check the connectivity for the hosts define in inventory file
