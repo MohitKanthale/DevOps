@@ -7,6 +7,7 @@
 #use this enviroment variables in the yaml.
 
 ---
+
 - name: MySQL Setup with Ansible using env vars
   hosts: all
   remote_user: root
