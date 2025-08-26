@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# PROBLEM: Given  integers, compute their average, rounded to three decimal places.
 
 # Ask how many numbers to read
 echo -n "Enter how many numbers you want to average: "
