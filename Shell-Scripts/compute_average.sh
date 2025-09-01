@@ -16,6 +16,7 @@ while [[ ${i} -lt ${N} ]]; do
     ((i++))
 done
 
+
 # Calculate and display average
 echo -n "The average of $N numbers is: "
 echo "scale=3; ${sum}/${N}" | bc
