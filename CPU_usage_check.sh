@@ -11,5 +11,6 @@ cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk
 if (( $(echo "$cpu_usage > $THRESHOLD" | bc -l) )); then
     echo "CPU usage is above $THRESHOLD%. Current usage: $cpu_usage%" | mail -s "CPU Alert" bandaru
 else
-    echo "cpu usage is below 80" | mail -s "CPU Alert" bandaru
+    # echo "cpu usage is below 80" | mail -s "CPU Alert" bandaru
+    echo "CPU usage is $THRESHOLD%. Current usage: $cpu_usage%" | mail -s "CPU alert" bandaru
 fi
