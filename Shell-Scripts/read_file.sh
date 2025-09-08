@@ -9,7 +9,6 @@ while read line; do
 done < nodeHealth.sh
 
 
-
 #IFS= → disables trimming of leading/trailing whitespace.
 
 #-r → prevents read from interpreting backslashes (\).
