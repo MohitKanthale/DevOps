@@ -21,7 +21,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form submitted successfully", formData);
+      console.log(" Form submitted successfully ", formData);
       // Backend integration can be added here (e.g., EmailJS, API call)
     }
   };
