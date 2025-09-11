@@ -46,3 +46,4 @@
         state: absent
         login_user: "{{ mysql_user }}"
         login_password: "{{ mysql_password }}"
+        
