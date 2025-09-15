@@ -6,3 +6,4 @@ echo "Adding content to the $FILE_NAME"
 echo "This is a Log entry." >> "$FILE_NAME"
 echo "Displaying content of $FILE_NAME:"
 cat "$FILE_NAME"
+
