@@ -36,3 +36,5 @@
 
     - debug:
         msg: "Output with env dictionary: {{ dict_env.stdout }}"
+
+        
