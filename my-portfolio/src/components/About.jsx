@@ -8,9 +8,8 @@ const About = () => {
   return (
     <section
       id="about"
-      className={`py-20 px-6 text-center transition-all duration-300 ${
-        darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
-      }`}
+      className={`py-20 px-6 text-center transition-all duration-300 ${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+        }`}
     >
       <motion.h2
         className="text-4xl font-bold mb-6"
