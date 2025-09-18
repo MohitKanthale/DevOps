@@ -35,6 +35,4 @@
       register: dict_env
 
     - debug:
-        msg: "Output with env dictionary: {{ dict_env.stdout }}"
-
-        
+        msg: "Output with env dictionary: {{ dict_env.stdout }}"      
