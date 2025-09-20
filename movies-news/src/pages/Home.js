@@ -10,6 +10,7 @@ import staticImage4 from "./../assets/train to busan.jpg";
 import staticImage5 from "./../assets/spiderman.jpg";
 import staticImage6 from "./../assets/avatar.jpg";
 
+
 const dummyNews = [
   { title: "Money Heist Part 5", description: "A thrilling continuation of the popular Netflix series.", image: staticImage1, url: "https://example.com/moneyheist" },
   { title: "Squid Game", description: "The survival drama that took the world by storm!", image: staticImage2, url: "https://example.com/squidgame" },
