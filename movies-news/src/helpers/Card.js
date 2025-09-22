@@ -21,3 +21,4 @@ const Card = ({ title, description, image, url }) => (
 );
 
 export default Card;
+
