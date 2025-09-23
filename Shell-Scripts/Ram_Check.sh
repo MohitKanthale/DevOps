@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Here, free ram is calculated using total of "free + Swap".
+
+
 FREE_MEM=$(free -mt | grep Total | awk '{print $4}')
 TH=100
 
