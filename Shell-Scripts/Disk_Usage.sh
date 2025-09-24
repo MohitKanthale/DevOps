@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Here "/dev/sda2" may be different in some users system, so replace according to it.
 DISK_USAGE=$(df -h | egrep -v "tmpfs|Filesystem" | grep /dev/sda2 | awk '{print $5}' | tr -d %)
 
 TH=20
