@@ -5,6 +5,8 @@ BASE=/home/ubuntu/
 DEPTH=1
 
 
+# Check if the directory is present on not
+
 if [[ ! -d $BASE ]]
 then
     echo "Directory does not exist - $BASE"
