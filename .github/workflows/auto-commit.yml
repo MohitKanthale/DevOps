@@ -1,0 +1,23 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: "0 */5 * * *"   # every 5 hours (UTC)
+  workflow_dispatch:          # manual trigger option
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Force commit (empty)
+        run: |
+          git config --global user.name "MohitKanthale"
+          git config --global user.email "MohitKanthale82@gmail.com"
+          git commit --allow-empty -m "commit at $(date)"
+          git push
+
